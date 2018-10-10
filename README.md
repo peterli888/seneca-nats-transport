@@ -1,3 +1,7 @@
+peterli add
+sendDone(null, function(msg, cb,meta)
+transpUtils.prepare_request(seneca, msg, cb,meta)
+
 # seneca-nats-transport
 
 [![NPM][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage][coverage-image]][coverage-url]
