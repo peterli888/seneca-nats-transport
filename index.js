@@ -138,11 +138,12 @@ module.exports = function(options) {
       seneca.log.info('client', 'subscribe', topicRes);
 
       // Send message over the transport
-      sendDone(null, function(msg, cb) {
+      sendDone(null, function(msg, cb,meta) {
+        //liyong add meta 2018-10-10
         seneca.log.debug('client', 'publish', topicAct, 'message', msg);
 
         // Publish act
-        nc.publish(topicAct, transpUtils.stringifyJSON(seneca, clientName, transpUtils.prepare_request(seneca, msg, cb)));
+        nc.publish(topicAct, transpUtils.stringifyJSON(seneca, clientName, transpUtils.prepare_request(seneca, msg, cb,meta)));
       });
 
       // Closer action
